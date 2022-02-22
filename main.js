@@ -22,16 +22,23 @@ navbarMenu.addEventListener('click', (event) => {
     if (link == null) {
         return;
     }
-
     console.log(event.target.dataset.link);
     scrollIntoView(link);
-
 });
 
 // Handle click on "contact me" button on home
 const homeContactBtn = document.querySelector('.home__contact');
 homeContactBtn.addEventListener('click', () => {
     scrollIntoView('#contact');
+});
+
+
+// Make home slowly fade to transparent as the window scrolls down
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+    home.style.opacity = (homeHeight - window.scrollY) / homeHeight;
+    // console.log((homeHeight - window.scrollY) / homeHeight);
 });
 
 function scrollIntoView(selector) {
