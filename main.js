@@ -32,13 +32,56 @@ homeContactBtn.addEventListener('click', () => {
     scrollIntoView('#contact');
 });
 
-
 // Make home slowly fade to transparent as the window scrolls down
 const home = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
     home.style.opacity = (homeHeight - window.scrollY) / homeHeight;
     // console.log((homeHeight - window.scrollY) / homeHeight);
+});
+
+
+// Show "arrow up" button when scrolling down
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+    if (window.scrollY > homeHeight / 2) {
+        arrowUp.classList.add('visible');
+    } else {
+        arrowUp.classList.remove('visible');
+    }
+});
+
+// // Handle click on "arrow up" button
+const arrowupBtn = document.querySelector('.arrow-up');
+arrowupBtn.addEventListener('click', () => {
+    scrollIntoView('#home');
+});
+
+
+// Projects
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (event) => {
+    const filter = event.target.dataset.filter || event.target.parentNode.dataset.filter;
+    if (filter == null) {
+        return;
+    }
+    projectContainer.classList.add('anim-out');
+
+    setTimeout(() => {
+        projects.forEach((project) => {
+            // console.log(project.dataset.type);
+            if (filter === '*' || filter === project.dataset.type) {
+                project.classList.remove('invisible');
+            } else {
+                project.classList.add('invisible');
+            }
+        });
+
+        projectContainer.classList.remove('anim-out');
+
+    }, 300);
 });
 
 function scrollIntoView(selector) {
