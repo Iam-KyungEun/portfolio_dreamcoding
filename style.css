@@ -539,6 +539,14 @@ p {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+    :root {
+        /* Font size */
+        --font-large: 30px;
+        --font-medium: 18px;
+        --font-regular: 16px;
+        --font-small: 14px;
+        --font-micro: 12px;
+    }
     .navbar__toggle-btn {
         display: block;
     }
@@ -582,4 +590,51 @@ p {
         width: 80px;
         height: 80px;
     }
+}
+
+
+.popup__btn {
+    position: fixed;
+    top: 100px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    padding:5px;
+    border-radius: 50%;
+    color: darkcyan;
+    border: none;
+}
+
+.pop-layer .pop-container {
+    padding: 20px 25px;
+}
+
+.pop-layer p.ctxt {
+    color: #666;
+    line-height: 25px;
+}
+
+.pop-layer {
+    display: none;
+    position: fixed;
+    top: 140px;
+    right: 45px;
+    max-width: 500px;
+    max-height: 500px;
+    margin: 10px 0 20px;
+    /* padding-top: 5px; */
+    background-color: #fff;
+    border: 5px solid darkcyan;
+    z-index: 1;
+    border-radius: 1em;
+    text-align: right;
+    /* overflow: auto; */
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+}
+
+.pop-layer::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
 }

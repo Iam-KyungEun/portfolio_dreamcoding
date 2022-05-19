@@ -106,3 +106,26 @@ function scrollIntoView(selector) {
         behavior: 'smooth'
     });
 }
+
+
+
+// for popup layer
+$('.popup__btn').click(function () {
+    let $href = $(this).attr('href');
+    layer_popup($href);
+});
+
+let toggle = false;
+
+function layer_popup(element) {
+
+    let $popup = $(element); //레이어의 id를 $element 변수에 저장
+
+    if (toggle == false) {
+        toggle = true;
+        $popup.fadeIn();
+    } else {
+        toggle = false;
+        $popup.fadeOut();
+    }
+}
