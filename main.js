@@ -110,7 +110,7 @@ function scrollIntoView(selector) {
 
 
 // for popup layer
-$('.popup__btn').click(function () {
+$('.pop__btn').click(function () {
     let $href = $(this).attr('href');
     layer_popup($href);
 });
@@ -119,13 +119,28 @@ let toggle = false;
 
 function layer_popup(element) {
 
-    let $popup = $(element); //레이어의 id를 $element 변수에 저장
+    let $el = $(element); //레이어의 id를 $element 변수에 저장
 
     if (toggle == false) {
         toggle = true;
-        $popup.fadeIn();
+        $el.fadeIn();
     } else {
         toggle = false;
-        $popup.fadeOut();
+        $el.fadeOut();
     }
+
+    $el.find('a.layerClose__btn').click(function () {
+        toggle = false;
+        $el.fadeOut(); // 닫기 버튼을 클릭하면 레이어가 닫힌다.
+        return false;
+    });
+
 }
+
+// $('.chatSend__btn').click(function(){
+//     let searchWord = $("#searchWord").val();
+
+//     function createMsg{
+//         let chatLi = $('div,chat')
+//     }
+// });
