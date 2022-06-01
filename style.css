@@ -623,7 +623,7 @@ p {
     width: 500px;
     height: 500px;
     margin: 10px 0 20px;
-    /* padding-top: 5px; */
+    padding-bottom: 40px;
     background-color: #fff;
     border: 5px solid darkcyan;
     z-index: 1;
@@ -651,7 +651,7 @@ p {
 
 .layerClose__btn {
     position: relative;
-    top:5px;
+    top:20px;
     right:5px;
     color:#000000;
     background-color: #3cada0;
@@ -659,8 +659,32 @@ p {
     height: 10px;
 }
 
-.chat_display {
-    padding: 0;
+/* Chat Box */
+.chat_wrap {
+    margin: auto;
+}
+
+.chat-display{
+    margin: auto;
+    /* background-color: green; */
+    text-align: center;
+}
+
+.chat-display video{
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.chat-display img{
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.chat_wrap h5{
+    display:none;
+    color: red;
 }
 
 .input-div {
@@ -694,21 +718,5 @@ p {
     border-radius: 4px;
     border: solid 1px;
     float:right;
+    cursor: pointer;
 }
-/* 
-.chat .chat-display {
-    padding-bottom: 80px;
-}
-
-.chat .chat-display ul {
-    width: 100%;
-    list-style: none;
-}
-
-.chat .chat-display ul li{
-    width: 100%;
-}
-
-.chat .chat-display ul li > div {
-    font-size: 13px;
-} */

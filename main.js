@@ -137,10 +137,27 @@ function layer_popup(element) {
 
 }
 
-// $('.chatSend__btn').click(function(){
-//     let searchWord = $("#searchWord").val();
+$('.chatSend__btn').click(function () {
+    console.log("hi!");
+    let inputText = $('div.input-div textarea').val();
+    $('#searchImg').hide();
+    $('#searchVd').hide();
+    $('.noData').hide();
+    if (inputText === "rabbit") {
+        $('#searchImg').attr('src', 'imgs/popups/rabbit.jpeg');
+        $('#searchImg').show();
+    } else if (inputText === "dog") {
+        $('#searchImg').attr('src', 'imgs/popups/dog.jpg');
+        $('#searchImg').show();
+    } else if (inputText === "cat") {
+        $('#searchImg').attr('src', 'imgs/popups/cat.jpeg');
+        $('#searchImg').show();
+    } else if (inputText === "video") {
+        $('#searchVd').attr('src', 'videos/testVideo.mp4');
+        $('#searchVd').show();
+    } else {
+        $('.noData').show();
+    }
 
-//     function createMsg{
-//         let chatLi = $('div,chat')
-//     }
-// });
+    $('div.input-div textarea').val('');
+});
